@@ -1,0 +1,36 @@
+
+---
+package-name: apache-airflow-providers-appops
+description: |
+    `App Ops with google ads, google admob, google analytics, and so on.`__
+
+versions:
+  - 0.0.2
+  - 0.0.1
+
+additional-dependencies:
+  - apache-airflow>=2.1.0
+
+integrations:
+  - integration-name: App Ops Toolkit
+    external-doc-url: https://appops/
+    tags: [google]
+
+operators:
+  - integration-name: App Ops Toolkit
+    python-modules:
+      - appops.operators.admob_to_postgres
+
+# sensors:
+#   - integration-name: App Ops Toolkit
+#     python-modules:
+#       - appops.sensors.sftp
+
+hooks:
+  - integration-name: App Ops Toolkit
+    python-modules:
+      - appops.hooks.oauth2discoveryapi
+      - appops.hooks.admob
+
+hook-class-names:
+  - appops.hooks.admob.AdmobHook
