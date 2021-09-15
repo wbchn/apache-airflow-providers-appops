@@ -1,6 +1,6 @@
 
 ---
-package-name: apache-airflow-providers-appops
+package-name: airflow-provider-appops
 description: |
     `App Ops with google ads, google admob, google analytics, and so on.`__
 

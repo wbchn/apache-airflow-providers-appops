@@ -117,7 +117,8 @@ class AdmobHook(GoogleOauth2DiscoveryApiHook):
         header = api_response[0]["header"]
         sdate = header["dateRange"]["startDate"]
         footer = api_response[-1]["footer"]
-        self.log.info(f"Api response rows: {footer['matchingRowCount']}")
+        matching_row_count = footer.get('matchingRowCount', 0)
+        self.log.info(f"Api response rows: {matching_row_count}")
 
         for line in api_response[1:-1]:
             dimensions = line["row"]["dimensionValues"]

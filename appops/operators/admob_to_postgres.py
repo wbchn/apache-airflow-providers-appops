@@ -47,7 +47,12 @@ class AdmobToPostgresOperator(BaseOperator):
             self.accounts,
         )
 
+        if not records:
+            self.log.warning("MediationReport get no result.")
+            return
+
         target_fields = list(records[0].keys())
+        self.log.info(f"Target columns: {target_fields}.")
         rows = [tuple(r[k] for k in target_fields) for r in records]
         self.log.info(f"Inserting {len(rows)} rows into Postgres.")
 
