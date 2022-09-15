@@ -11,7 +11,6 @@ setup(
     description='App ops provider package built by papaya.',
     long_description=long_description,
     long_description_content_type='text/markdown',
-    license="MIT",
     author="wb",
     author_email="wbin.chn@gmail.com",
     maintainer="wbchn",
@@ -24,8 +23,7 @@ setup(
     license='Apache License 2.0',
     packages=['appops', 'appops.hooks',
               'appops.operators'],
-    python_requires=">=3.7",
-    install_requires=['apache-airflow>=2.1,<2.3', 'apache-airflow-providers-google>=5.0.0,<6.7.0'],
+    install_requires=['apache-airflow>=2.1,<2.3', 'apache-airflow-providers-google>=5.0.0,<7.0.0', 'protobuf<=3.20.2'],
     setup_requires=['setuptools', 'wheel'],
     classifiers=[
         "License :: OSI Approved :: MIT License",
