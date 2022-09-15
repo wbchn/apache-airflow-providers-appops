@@ -7,7 +7,7 @@ with open("README.md", "r") as fh:
 """Perform the package airflow-provider-appops setup."""
 setup(
     name='airflow-provider-appops',
-    version="0.0.3",
+    version="0.0.4",
     description='App ops provider package built by papaya.',
     long_description=long_description,
     long_description_content_type='text/markdown',
