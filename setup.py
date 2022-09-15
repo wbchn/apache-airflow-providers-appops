@@ -7,10 +7,15 @@ with open("README.md", "r") as fh:
 """Perform the package airflow-provider-appops setup."""
 setup(
     name='airflow-provider-appops',
-    version="0.0.2",
+    version="0.0.3",
     description='App ops provider package built by papaya.',
     long_description=long_description,
     long_description_content_type='text/markdown',
+    license="MIT",
+    author="wb",
+    author_email="wbin.chn@gmail.com",
+    maintainer="wbchn",
+    maintainer_email="wbin.chn@gmail.com",
     entry_points={
         "apache_airflow_provider": [
             "provider_info=appops.__init__:get_provider_info"
@@ -19,10 +24,17 @@ setup(
     license='Apache License 2.0',
     packages=['appops', 'appops.hooks',
               'appops.operators'],
-    install_requires=['apache-airflow>=2.1', 'apache-airflow-providers-google>=5.0.0'],
+    python_requires=">=3.7",
+    install_requires=['apache-airflow>=2.1,<2.3', 'apache-airflow-providers-google>=5.0.0,<6.7.0'],
     setup_requires=['setuptools', 'wheel'],
-    author='wb',
-    author_email='wb@papaya*mobile.com',
-    url='http://papaya.io/',
+    classifiers=[
+        "License :: OSI Approved :: MIT License",
+        "Programming Language :: Python",
+        "Programming Language :: Python :: 3",
+        "Programming Language :: Python :: 3.7",
+        "Programming Language :: Python :: 3.8",
+        "Intended Audience :: Developers",
+    ],
+    url='https://github.com/wbchn/apache-airflow-providers-appops',
     python_requires='~=3.7',
 )

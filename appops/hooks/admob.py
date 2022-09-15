@@ -95,7 +95,8 @@ class AdmobHook(GoogleOauth2DiscoveryApiHook):
         # https://developers.google.com/admob/api/v1/reference/rest/v1/ReportRow#DimensionValue
         output = {}
         for prefix, value in dimensions.items():
-            output[prefix] = value["value"]
+            # print(prefix, value)
+            output[prefix] = value.get("value")
             if 'displayLabel' in value:
                 output[f'{prefix}_NAME'] = value["displayLabel"]
         return output
